@@ -57,7 +57,7 @@
             <% Seek::Config.omniauth_providers.each do |provider, options| %>
               <div role="tabpanel" class="tab-pane" id="<%= provider.to_s %>_login">
                 <% if provider.to_s == "ldap" %>
-                  <%= form_tag '/auth/ldap/callback' do %>
+                   <%= form_tag '/auth/ldap/callback' do %>
                     <% original_path ||= request.original_fullpath %>
                     <%= hidden_field_tag "called_from[path]", original_path -%>
                     <div class="form-group">

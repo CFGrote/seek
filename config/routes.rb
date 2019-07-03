@@ -787,7 +787,8 @@ SEEK::Application.routes.draw do
 
   get '/logout' => 'sessions#destroy', :as => :logout
   get '/login' => 'sessions#new', :as => :login
-  get '/auth/:provider/callback' => 'sessions#create'
+  # get '/auth/:provider/callback' => 'sessions#create'
+  post '/auth/:provider/callback' => 'sessions#create'
   get '/activate(/:activation_code)' => 'users#activate', :as => :activate
   get '/forgot_password' => 'users#forgot_password', :as => :forgot_password
   get '/policies/request_settings' => 'policies#send_policy_data', :as => :request_policy_settings
